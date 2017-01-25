@@ -1,5 +1,7 @@
 package gettaroom.rest.web;
 
+import gettaroom.rest.api.resources.RoomsResource;
+import gettaroom.rest.api.resources.RoomsResourceImpl;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -50,7 +52,8 @@ public class WebApplication extends Application<ApplicationConfiguration> {
         cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "/*");
 
         // Register resources
-//        environment.jersey().register(roomsResource);
+        RoomsResource roomsResource = new RoomsResourceImpl();
+        environment.jersey().register(roomsResource);
 //        environment.jersey().register(actionsResource);
 
     }
