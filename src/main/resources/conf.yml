@@ -1,0 +1,8 @@
+swagger:
+  resourcePackage: gettaroom.rest.api.resources
+
+server:
+  rootPath: /api/*
+  applicationConnectors:
+    - type: http
+      port: 9090
